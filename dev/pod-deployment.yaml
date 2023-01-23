@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: argocdfirstapp
+   namespace: argocd
+spec:
+   containers:
+   - name: argocdfirstappcontainer
+     image: dockernewgen/dockeraudioapp:latest
+     ports:
+     - containerPort: 8080
