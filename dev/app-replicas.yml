@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: app-replicaset
+  namespace: argocd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: argocdfirstapp
+  template:
+    metadata:
+      labels:
+        app: argocdfirstapp
+    spec:
+      containers:
+      - name: argocdfirstappcontainer
+        image: dockernewgen/dockeraudioapp:latest
